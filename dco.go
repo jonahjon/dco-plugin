@@ -193,7 +193,7 @@ func checkExistingLabels(gc gitHubClient, l *logrus.Entry, org, repo string, num
 // takeAction will take appropriate action on the pull request according to its
 // current state.
 func takeAction(gc gitHubClient, cp commentPruner, l *logrus.Entry, org, repo string, pr github.PullRequest, commitsMissingDCO []github.RepositoryCommit, existingStatus string, hasYesLabel, hasNoLabel, addComment bool) error {
-	targetURL := fmt.Sprintf("https://github.com/%s/%s/blob/master/CONTRIBUTING.md", org, ".github")
+	targetURL := fmt.Sprintf("https://github.com/%s/%s/blob/master/CONTRIBUTING.md#developer-certificate-of-origin", org, ".github")
 
 	signedOff := len(commitsMissingDCO) == 0
 
