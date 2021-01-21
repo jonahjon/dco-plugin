@@ -38,9 +38,16 @@ const (
 	dcoNoLabel         = "dco-signoff: no"
 	dcoMsgPruneMatch   = "Thanks for your pull request. Before we can look at it, you'll need to add a 'DCO signoff' to your commits."
 	dcoNotFoundMessage = `Thanks for your pull request. Before we can look at it, you'll need to add a 'DCO signoff' to your commits.
-:memo: **Please follow instructions in the [contributing guide](%s) to update your commits with the DCO**
-Full details of the Developer Certificate of Origin can be found at [developercertificate.org](https://developercertificate.org/).
-**The list of commits missing DCO signoff**:
+	:memo:
+	To add a 'DCO signoff' to your commit:
+	1. Ensure that you have a local copy of your branch by [checking out the pull request locally via command line](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/checking-out-pull-requests-locally).
+	2. Head to your local branch and type the following:
+		```git commit --amend --no-edit --signoff```
+	3. Now your commits will have your signoff. Push the commit with the DCO signoff:
+   		```git push --force-with-lease origin <branch_name>```
+   
+   	Details of the Developer Certificate of Origin can be found at [developercertificate.org](https://developercertificate.org/).
+	**The list of commits missing DCO signoff**:
 %s
 <details>
 %s
